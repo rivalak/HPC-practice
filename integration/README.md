@@ -10,3 +10,6 @@ main-mpi.c integration.c function.c
 ### 基于主从模式的并行算法
 main_nr.c main_nr-mpi1.c main_nr-mpi2.c integration_nr.c function.c
 > main_nr.c和main_nr-mpi1.c & main_nr-mpi2.c分别是串行和并行主程序实现(使用非阻塞通信&基于散发/收集通信)
+
+# USAGE
+参看Makefile
