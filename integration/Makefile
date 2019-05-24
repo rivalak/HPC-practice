@@ -12,7 +12,8 @@ CFLAGS = -Wall -I$(DIR_INC)
 serial_0   = $(DIR_BIN)/main
 mpi_0      = $(DIR_BIN)/main-mpi1
 serial_nr  = $(DIR_BIN)/main_nr
-mpi_nr     = $(DIR_BIN)/main_nr-mpi1
+mpi_nr1     = $(DIR_BIN)/main_nr-mpi1
+mpi_nr2     = $(DIR_BIN)/main_nr-mpi2
 
 _SRCS = main.c integration.c function.c main-mpi1.c main_nr.c integration_nr.c \
 		main_nr-mpi1.c
@@ -42,5 +43,8 @@ mpi_0: $(DIR_OBJ)/main-mpi1.o $(DIR_OBJ)/integration.o $(DIR_OBJ)/function.o
 serial_nr: $(DIR_OBJ)/main_nr.o $(DIR_OBJ)/integration_nr.o $(DIR_OBJ)/function.o
 	$(MLD) -o $(serial_nr) $^
 
-mpi_nr: $(DIR_OBJ)/main_nr-mpi1.o $(DIR_OBJ)/integration_nr.o $(DIR_OBJ)/function.o
-	$(MLD) -o $(mpi_nr) $^
+mpi_nr1: $(DIR_OBJ)/main_nr-mpi1.o $(DIR_OBJ)/integration_nr.o $(DIR_OBJ)/function.o
+	$(MLD) -o $(mpi_nr1) $^
+
+mpi_nr2: $(DIR_OBJ)/main_nr-mpi2.o $(DIR_OBJ)/integration_nr.o $(DIR_OBJ)/function.o
+	$(MLD) -o $(mpi_nr2) $^
